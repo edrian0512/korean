@@ -1,0 +1,1664 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Master Vocabulary (650+ Words)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#f59e0b',
+                            goldLight: '#fbbf24',
+                            goldDark: '#d97706',
+                            bg: '#090a0f',
+                            card: '#12141c',
+                            cardBorder: '#262938',
+                            accent: '#3b82f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        hangul: ['Noto Sans KR', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090a0f;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 3D Flip Card Effect */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12141c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3248;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Glow effects */
+        .gold-glow {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25);
+        }
+        .gold-glow-lg {
+            box-shadow: 0 0 40px -5px rgba(245, 158, 11, 0.35);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-black/60 backdrop-blur-md sticky top-0 z-50 px-4 py-3">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-bold text-black text-xl font-hangul shadow-lg shadow-amber-500/20">
+                    한
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="font-extrabold text-lg md:text-xl tracking-tight text-white">CLAS-AI Korean Vocabulary</h1>
+                        <span id="badge-total" class="bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2 py-0.5 rounded-full font-semibold">
+                            650+ Words
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-400">Complete 12-Page Master Dataset</p>
+                </div>
+            </div>
+
+            <!-- View Mode Navigation Tabs -->
+            <div class="flex bg-gray-900/90 p-1 rounded-xl border border-gray-800 text-xs md:text-sm font-medium">
+                <button id="tab-cards" onclick="setViewMode('cards')" class="px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all bg-amber-500 text-black font-semibold shadow">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Cards
+                </button>
+                <button id="tab-list" onclick="setViewMode('list')" class="px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all text-gray-400 hover:text-white">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                    List View
+                </button>
+                <button id="tab-quiz" onclick="setViewMode('quiz')" class="px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all text-gray-400 hover:text-white">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Quiz
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full flex flex-col gap-6">
+
+        <!-- Controls & Filters Bar -->
+        <div class="bg-gray-900/60 border border-gray-800/80 rounded-2xl p-4 backdrop-blur-sm flex flex-col md:flex-row gap-3 items-center justify-between">
+            <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+                <!-- Category Select -->
+                <div class="relative w-full sm:w-64">
+                    <select id="category-filter" onchange="onCategoryChange()" class="w-full bg-black/80 border border-gray-700 text-gray-200 text-sm rounded-xl px-3 py-2.5 appearance-none focus:outline-none focus:border-amber-500 cursor-pointer">
+                        <option value="ALL">All Categories (650+ Words)</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="relative w-full sm:w-64">
+                    <input type="text" id="search-input" oninput="onSearchInput()" placeholder="Search Korean, English, Pronunciation..." class="w-full bg-black/80 border border-gray-700 text-gray-200 text-sm rounded-xl pl-9 pr-3 py-2 focus:outline-none focus:border-amber-500">
+                    <svg class="w-4 h-4 text-gray-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                <button id="btn-starred-filter" onclick="toggleStarredFilter()" class="flex-1 sm:flex-none border border-gray-700 bg-gray-800/50 hover:bg-gray-800 text-gray-300 px-3 py-2 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition-all">
+                    <svg id="star-icon" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                    Starred Only
+                </button>
+                <button onclick="shuffleCurrentList()" class="border border-gray-700 bg-gray-800/50 hover:bg-gray-800 text-gray-300 p-2 rounded-xl text-xs font-medium flex items-center justify-center gap-1 transition-all" title="Shuffle Words">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Category Chips -->
+        <div id="category-chips" class="flex gap-2 overflow-x-auto pb-1 text-xs no-scrollbar">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- VIEW 1: FLASHCARDS VIEW -->
+        <div id="view-cards" class="flex flex-col items-center justify-center py-2 flex-1">
+            <!-- Counter & Category Badge -->
+            <div class="w-full max-w-md flex justify-between items-center mb-3 text-xs text-gray-400 font-medium">
+                <span id="card-counter">Word 1 of 680</span>
+                <span id="card-category-badge" class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full font-semibold">
+                    Verbs & Adjectives
+                </span>
+            </div>
+
+            <!-- 3D Flip Flashcard -->
+            <div class="w-full max-w-md h-[380px] perspective-1000 cursor-pointer group" onclick="flipCard()">
+                <div id="flashcard-inner" class="relative w-full h-full transform-style-3d duration-500 rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-900 via-gray-950 to-black gold-glow p-6 flex flex-col justify-between shadow-2xl">
+                    
+                    <!-- Card Front -->
+                    <div class="absolute inset-0 backface-hidden p-6 flex flex-col justify-between bg-gray-900/90 rounded-3xl border border-gray-800">
+                        <div class="flex justify-between items-start">
+                            <span id="front-category" class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                VERBS & ADJECTIVES
+                            </span>
+                            <div class="flex gap-2">
+                                <button onclick="event.stopPropagation(); playAudioCurrent()" class="p-2.5 rounded-full bg-gray-800/80 hover:bg-amber-500 hover:text-black text-gray-300 transition-all shadow" title="Pronounce">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                                </button>
+                                <button id="front-star-btn" onclick="event.stopPropagation(); toggleStarCurrent()" class="p-2.5 rounded-full bg-gray-800/80 hover:bg-gray-700 text-gray-400 transition-all" title="Star Word">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Icon & Hangul Word Center -->
+                        <div class="flex flex-col items-center justify-center my-auto gap-3 text-center">
+                            <div id="front-icon" class="text-5xl p-4 bg-black/40 rounded-2xl border border-gray-800 shadow-inner">
+                                📍
+                            </div>
+                            <h2 id="front-hangul" class="text-4xl md:text-5xl font-extrabold text-white font-hangul tracking-wide">
+                                가깝다
+                            </h2>
+                            <p id="front-roman" class="text-amber-400/90 font-mono text-base tracking-wide">
+                                ga-kka-pda
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500 flex items-center justify-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                Click card or press Space to reveal meaning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card Back -->
+                    <div class="absolute inset-0 backface-hidden rotate-y-180 p-6 flex flex-col justify-between bg-gradient-to-b from-gray-900 to-black rounded-3xl border border-amber-500/30">
+                        <div class="flex justify-between items-start">
+                            <span id="back-category" class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                                TRANSLATION & MEANING
+                            </span>
+                            <button onclick="event.stopPropagation(); playAudioCurrent()" class="p-2 rounded-full bg-amber-500 text-black font-bold hover:bg-amber-400 transition-all shadow" title="Pronounce">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center my-auto gap-3 text-center">
+                            <span id="back-icon" class="text-3xl">📍</span>
+                            <h3 id="back-english" class="text-3xl font-bold text-white tracking-wide">
+                                To be close / near
+                            </h3>
+                            <div class="h-0.5 w-12 bg-amber-500/50 rounded-full my-1"></div>
+                            <p id="back-hangul-sub" class="text-lg text-gray-300 font-hangul">
+                                가깝다 <span id="back-roman-sub" class="text-xs text-amber-400 font-mono">(ga-kka-pda)</span>
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500">Click to flip back</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card Controls Nav -->
+            <div class="w-full max-w-md flex items-center justify-between gap-3 mt-6">
+                <button onclick="prevCard()" class="flex-1 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-200 py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Previous
+                </button>
+                <button onclick="toggleStarCurrent()" id="btn-card-star" class="px-5 bg-gray-900 border border-gray-800 hover:border-amber-500/50 text-amber-400 py-3 rounded-2xl font-semibold flex items-center justify-center transition-all active:scale-95 shadow-lg" title="Toggle Favorite">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                </button>
+                <button onclick="nextCard()" class="flex-1 bg-amber-500 hover:bg-amber-400 text-black py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-amber-500/10">
+                    Next
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- VIEW 2: LIST / TABLE VIEW -->
+        <div id="view-list" class="hidden flex-1">
+            <div class="bg-gray-900/80 border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                <div class="p-4 border-b border-gray-800 flex justify-between items-center bg-black/40">
+                    <span id="list-count-label" class="text-xs text-gray-400 font-semibold">Showing 680 Vocabulary Items</span>
+                    <span class="text-xs text-gray-500">Click speaker icon to pronounce</span>
+                </div>
+                <div class="max-h-[600px] overflow-y-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-950 text-gray-400 text-xs uppercase sticky top-0 border-b border-gray-800 z-10">
+                            <tr>
+                                <th class="py-3 px-4 w-12 text-center">#</th>
+                                <th class="py-3 px-4">Korean (Hangul)</th>
+                                <th class="py-3 px-4">Pronunciation</th>
+                                <th class="py-3 px-4">English Meaning</th>
+                                <th class="py-3 px-4">Category</th>
+                                <th class="py-3 px-4 text-center">Audio</th>
+                                <th class="py-3 px-4 text-center">Star</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vocab-table-body" class="divide-y divide-gray-800/60 text-sm">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 3: QUIZ MODE -->
+        <div id="view-quiz" class="hidden flex-1 flex flex-col items-center justify-center py-4">
+            <div class="w-full max-w-lg bg-gray-900 border border-gray-800 rounded-3xl p-6 shadow-2xl relative">
+                
+                <!-- Quiz Progress Bar -->
+                <div class="flex justify-between items-center mb-4 text-xs font-semibold text-gray-400">
+                    <span>Quiz Score: <strong id="quiz-score" class="text-amber-400 text-sm">0</strong></span>
+                    <span id="quiz-question-num">Question 1 of 10</span>
+                </div>
+                <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden mb-6">
+                    <div id="quiz-progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <!-- Quiz Prompt Container -->
+                <div class="bg-black/50 border border-gray-800 rounded-2xl p-6 text-center mb-6">
+                    <div id="quiz-icon" class="text-4xl mb-2">📍</div>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1 block">What does this Korean word mean?</span>
+                    <h3 id="quiz-question-word" class="text-4xl font-extrabold text-white font-hangul tracking-wide mb-1">
+                        가깝다
+                    </h3>
+                    <p id="quiz-question-roman" class="text-xs font-mono text-amber-400/80">ga-kka-pda</p>
+                </div>
+
+                <!-- Multiple Choice Options -->
+                <div id="quiz-options-container" class="grid grid-cols-1 gap-3">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Next Quiz Question Button -->
+                <button id="btn-quiz-next" onclick="generateQuizQuestion()" class="w-full mt-6 bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-xl hidden transition-all shadow">
+                    Next Question →
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-black/60 py-4 px-4 text-center text-xs text-gray-500">
+         Korean Master Dataset • 650+ Hand-Curated Vocabulary Items • Comprehensive 12 Pages
+    </footer>
+
+    <script>
+        // MASTER DATASET COMPACT ENCODING
+        // Categories:
+        // 1: Verbs & Adjectives, 2: Taste, 3: Month, 4: Days of Week, 5: Date/Time, 6: Season, 7: Weather, 8: Nature, 
+        // 9: Native Numbers, 10: Sino Numbers, 11: Family, 12: Color, 13: Electric Appliances, 14: Pronoun, 15: Household Items,
+        // 16: Occupation, 17: Place, 18: Body Parts, 19: Direction, 20: Animal, 21: Vegetable/Crops, 22: Fruits, 23: Drinks,
+        // 24: Food, 25: Religion, 26: School Subjects, 27: Personal Info, 28: Transportation, 29: Adverbs, 30: Sport/Hobby,
+        // 31: Demonstratives, 32: More Vocabulary, 33: Adverb of Time, 34: Adverb of Place, 35: Adverb of Manner, 36: Adverb of Frequency,
+        // 37: Interrogative, 38: Country/Nationality
+
+        const CATEGORY_NAMES = {
+            1: "Verbs & Adjectives", 2: "Taste", 3: "Month", 4: "Days of Week", 5: "Date / Time",
+            6: "Season", 7: "Weather", 8: "Nature", 9: "Native Numbers", 10: "Sino Numbers",
+            11: "Family", 12: "Color", 13: "Electric Appliances", 14: "Pronoun", 15: "Household Items",
+            16: "Occupation", 17: "Place", 18: "Parts of Body", 19: "Direction", 20: "Animal",
+            21: "Vegetable / Crops", 22: "Fruits", 23: "Drinks", 24: "Food", 25: "Religion",
+            26: "School Subjects", 27: "Personal Info", 28: "Transportation", 29: "Adverbs / Adverbials",
+            30: "Sport / Hobby", 31: "Demonstratives", 32: "More Vocabulary", 33: "Adverb of Time",
+            34: "Adverb of Place", 35: "Adverb of Manner", 36: "Adverb of Frequency", 37: "Interrogative",
+            38: "Country & Nationality"
+        };
+
+        // Compact Dataset Array: [Hangul, Romanization, English, CategoryId, IconEmoji]
+        const RAW_VOCAB = [
+            // Page 1-3: Verbs & Adjectives (1-245)
+            ["가깝다", "ga-kka-pda", "To be close / near", 1, "📍"],
+            ["가르치다", "ga-reu-chi-da", "To teach", 1, "👨‍🏫"],
+            ["가리키다", "ga-ri-ki-da", "To point / indicate", 1, "👉"],
+            ["가지다", "ga-ji-da", "To have / hold", 1, "🤲"],
+            ["갈아타다", "ga-ra-ta-da", "To transfer (transport)", 1, "🔄"],
+            ["감다", "gam-da", "To close (eyes) / wash (hair)", 1, "👁️"],
+            ["감사하다", "gam-sa-ha-da", "To thank", 1, "🙏"],
+            ["감히", "gam-hi", "Daringly / boldly", 1, "🦁"],
+            ["강조하다", "gang-jo-ha-da", "To emphasize", 1, "📢"],
+            ["갖추다", "gat-chu-da", "To equip / possess", 1, "🧰"],
+            ["개발하다", "gae-bal-ha-da", "To develop", 1, "💻"],
+            ["거짓말하다", "geo-jit-mal-ha-da", "To lie", 1, "🤥"],
+            ["걱정하다", "geok-jeong-ha-da", "To worry", 1, "😟"],
+            ["건너다", "geon-neo-da", "To cross", 1, "🚶‍♂️"],
+            ["걷다", "geot-da", "To walk", 1, "🚶"],
+            ["걸다", "geol-da", "To hang / call", 1, "📞"],
+            ["걸리다", "geol-ri-da", "To take time / catch cold", 1, "⏱️"],
+            ["결정하다", "gyeol-jeong-ha-da", "To decide", 1, "⚖️"],
+            ["결혼하다", "gyeol-hon-ha-da", "To marry", 1, "💍"],
+            ["경험하다", "gyeong-heom-ha-da", "To experience", 1, "🎒"],
+            ["계산하다", "gye-san-ha-da", "To calculate / pay", 1, "💳"],
+            ["고르다", "go-reu-da", "To choose / select", 1, "☑️"],
+            ["고치다", "go-chi-da", "To repair / fix", 1, "🔧"],
+            ["공부하다", "gong-bu-ha-da", "To study", 1, "📚"],
+            ["공연하다", "gong-yeon-ha-da", "To perform", 1, "🎭"],
+            ["관련되다", "gwal-ryeon-doe-da", "To be related to", 1, "🔗"],
+            ["관심을 가지다", "gwan-sim-eul ga-ji-da", "To take interest in", 1, "💡"],
+            ["구경하다", "gu-gyeong-ha-da", "To sightsee / watch", 1, "👀"],
+            ["구하다", "gu-ha-da", "To search for / save", 1, "🛟"],
+            ["그리다", "geu-ri-da", "To draw / paint", 1, "🎨"],
+            ["기억하다", "gi-eok-ha-da", "To remember", 1, "🧠"],
+            ["기다리다", "gi-da-ri-da", "To wait", 1, "⏳"],
+            ["기름지다", "gi-reum-ji-da", "To be greasy / oily", 1, "🍕"],
+            ["기뻐하다", "gi-ppeo-ha-da", "To rejoice / be glad", 1, "🥳"],
+            ["길다", "gil-da", "To be long", 1, "📏"],
+            ["깎다", "kkak-da", "To peel / discount", 1, "🔪"],
+            ["깨끗하다", "kkae-kkeut-ha-da", "To be clean", 1, "✨"],
+            ["깨어나다", "kkae-eo-na-da", "To wake up", 1, "⏰"],
+            ["꺼내다", "kkeo-nae-da", "To take out", 1, "📦"],
+            ["끄다", "kkeu-da", "To turn off", 1, "🔌"],
+            ["끊다", "kkeun-ta", "To sever / quit", 1, "✂️"],
+            ["끌다", "kkeul-da", "To pull / drag", 1, "🚜"],
+            ["끝나다", "kkeut-na-da", "To end / finish", 1, "🏁"],
+            ["나쁘다", "na-ppeu-da", "To be bad", 1, "👎"],
+            ["나가다", "na-ga-da", "To go out", 1, "🚪"],
+            ["나오다", "na-o-da", "To come out", 1, "🌅"],
+            ["나누다", "na-nu-da", "To share / divide", 1, "🍰"],
+            ["나타나다", "na-ta-na-da", "To appear", 1, "👻"],
+            ["날다", "nal-da", "To fly", 1, "🕊️"],
+            ["날씬하다", "nal-ssin-ha-da", "To be slim", 1, "🧍"],
+            ["남기다", "nam-gi-da", "To leave behind", 1, "📝"],
+            ["남다", "nam-da", "To remain", 1, "⏳"],
+            ["낮다", "nat-da", "To be low", 1, "📉"],
+            ["낳다", "nat-da", "To give birth", 1, "👶"],
+            ["내다", "nae-da", "To pay / submit", 1, "💵"],
+            ["내리다", "nae-ri-da", "To get off / descend", 1, "🚌"],
+            ["넓다", "neol-da", "To be spacious / wide", 1, "🏞️"],
+            ["넘어지다", "neo-meo-ji-da", "To fall down", 1, "🤸"],
+            ["넣다", "neo-ta", "To put in", 1, "📥"],
+            ["노래하다", "no-rae-ha-da", "To sing", 1, "🎤"],
+            ["놀다", "nol-da", "To play / hang out", 1, "🎈"],
+            ["놀라다", "nol-ra-da", "To be surprised", 1, "😲"],
+            ["높다", "nop-da", "To be high", 1, "🏔️"],
+            ["놓다", "no-ta", "To put / place", 1, "🛏️"],
+            ["누르다", "nu-reu-da", "To press / push", 1, "🔘"],
+            ["누워있다", "nu-wo-it-da", "To be lying down", 1, "🛋️"],
+            ["느끼다", "neu-kki-da", "To feel", 1, "❤️"],
+            ["느리다", "neu-ri-da", "To be slow", 1, "🐢"],
+            ["늘어나다", "neul-eo-na-da", "To increase / stretch", 1, "📈"],
+            ["능숙하다", "neung-suk-ha-da", "To be skillful", 1, "🎯"],
+            ["다니다", "da-ni-da", "To commute / attend", 1, "🚶‍♂️"],
+            ["다르다", "da-reu-da", "To be different", 1, "🔀"],
+            ["다듬다", "da-deum-da", "To trim / refine", 1, "✂️"],
+            ["다치다", "da-chi-da", "To get hurt", 1, "🩹"],
+            ["닦다", "dak-da", "To wipe / brush", 1, "🪥"],
+            ["닫다", "dat-da", "To close", 1, "🚪"],
+            ["달라지다", "dal-ra-ji-da", "To change / become different", 1, "🦋"],
+            ["달리다", "dal-ri-da", "To run", 1, "🏃"],
+            ["달다", "dal-da", "To be sweet", 1, "🍬"],
+            ["닮다", "dam-da", "To resemble", 1, "👯"],
+            ["담다", "dam-da", "To contain / put in", 1, "🫙"],
+            ["답답하다", "dap-dap-ha-da", "To feel suffocated", 1, "😤"],
+            ["대답하다", "dae-dap-ha-da", "To answer", 1, "💬"],
+            ["더럽다", "deo-reop-da", "To be dirty", 1, "🧹"],
+            ["던지다", "deon-ji-da", "To throw", 1, "⚾"],
+            ["덮다", "deop-da", "To cover", 1, "📖"],
+            ["돕다", "dop-da", "To help", 1, "🤝"],
+            ["도착하다", "do-chak-ha-da", "To arrive", 1, "🛬"],
+            ["돌려주다", "dol-ryeo-ju-da", "To return (an item)", 1, "↩️"],
+            ["돌아오다", "dol-a-o-da", "To come back", 1, "🏠"],
+            ["돕다", "dop-da", "To assist", 1, "🆘"],
+            ["되다", "doe-da", "To become", 1, "✨"],
+            ["두껍다", "du-kkeop-da", "To be thick", 1, "📚"],
+            ["두렵다", "du-ryeop-da", "To be fearful", 1, "😨"],
+            ["드르다", "deu-reu-da", "To drop by", 1, "🛍️"],
+            ["듣다", "deut-da", "To listen", 1, "🎧"],
+            ["들다", "deul-da", "To carry / hold / enter", 1, "🛍️"],
+            ["들어가다", "deul-eo-ga-da", "To enter", 1, "🚪"],
+            ["등산하다", "deung-san-ha-da", "To hike mountain", 1, "⛰️"],
+            ["따뜻하다", "tta-tteut-ha-da", "To be warm", 1, "☕"],
+            ["따라하다", "tta-ra-ha-da", "To imitate / follow", 1, "🦜"],
+            ["떠나다", "tteo-na-da", "To leave / depart", 1, "🧳"],
+            ["뜨겁다", "tteu-geop-da", "To be hot (touch)", 1, "🔥"],
+            ["뜻하다", "tteut-ha-da", "To mean / signify", 1, "💡"],
+            ["마시다", "ma-si-da", "To drink", 1, "🥤"],
+            ["마음먹다", "ma-eum-meok-da", "To make up mind", 1, "🧠"],
+            ["마치다", "ma-chi-da", "To finish", 1, "🏁"],
+            ["막히다", "mak-hi-da", "To be blocked / clogged", 1, "🚗"],
+            ["만나다", "man-na-da", "To meet", 1, "🤝"],
+            ["만들다", "man-deul-da", "To make", 1, "🔨"],
+            ["만족하다", "man-jok-ha-da", "To be satisfied", 1, "😊"],
+            ["만지다", "man-ji-da", "To touch", 1, "🖐️"],
+            ["말하다", "mal-ha-da", "To speak", 1, "🗣️"],
+            ["맑다", "mak-da", "To be clear (weather/water)", 1, "☀️"],
+            ["맛있다", "mas-it-da", "To be delicious", 1, "😋"],
+            ["맞다", "mat-da", "To be correct / hit", 1, "✅"],
+            ["매다", "mae-da", "To tie / fasten", 1, "👔"],
+            ["매우다", "mae-u-da", "To fill up", 1, "🫙"],
+            ["매웁다", "mae-up-da", "To be spicy", 1, "🌶️"],
+            ["먹다", "meok-da", "To eat", 1, "🍚"],
+            ["멍멍하다", "meong-meong-ha-da", "To be dazed", 1, "😵"],
+            ["멈추다", "meom-chu-da", "To stop", 1, "🛑"],
+            ["멋있다", "meos-it-da", "To be cool / stylish", 1, "😎"],
+            ["멍들다", "meong-deul-da", "To bruise", 1, "🟣"],
+            ["모으다", "mo-eu-da", "To gather / collect", 1, "💰"],
+            ["모르다", "mo-reu-da", "To not know", 1, "🤷"],
+            ["모시다", "mo-si-da", "To attend / escort (honorific)", 1, "🤝"],
+            ["모이다", "mo-i-da", "To assemble", 1, "👥"],
+            ["목말라하다", "mok-mal-ra-ha-da", "To be thirsty", 1, "🚰"],
+            ["못하다", "mot-ha-da", "To be poor at", 1, "❌"],
+            ["무겁다", "mu-geop-da", "To be heavy", 1, "🏋️"],
+            ["무섭다", "mu-seop-da", "To be scary", 1, "😱"],
+            ["묶다", "muk-da", "To tie up", 1, "🎀"],
+            ["묻다", "mut-da", "To ask / bury", 1, "❓"],
+            ["물어보다", "mul-eo-bo-da", "To inquire", 1, "🗣️"],
+            ["미워하다", "mi-wo-ha-da", "To hate", 1, "😠"],
+            ["미안하다", "mi-an-ha-da", "To be sorry", 1, "🙇"],
+            ["믿다", "mit-da", "To believe / trust", 1, "🤝"],
+            ["밀다", "mil-da", "To push", 1, "🚪"],
+            ["바꾸다", "ba-kku-da", "To change / exchange", 1, "🔄"],
+            ["바쁘다", "ba-ppeu-da", "To be busy", 1, "🏃‍♂️"],
+            ["바라다", "ba-ra-da", "To wish / hope", 1, "🌠"],
+            ["박수치다", "bak-su-chi-da", "To clap", 1, "👏"],
+            ["반갑다", "ban-gap-da", "To be glad to meet", 1, "🤝"],
+            ["받다", "bat-da", "To receive", 1, "🎁"],
+            ["밝다", "bak-da", "To be bright", 1, "💡"],
+            ["밟다", "bap-da", "To step on", 1, "🦶"],
+            ["방문하다", "bang-mun-ha-da", "To visit", 1, "🚪"],
+            ["배우다", "bae-u-da", "To learn", 1, "🎓"],
+            ["버리다", "beo-ri-da", "To throw away", 1, "🗑️"],
+            ["벌다", "beol-da", "To earn (money)", 1, "💵"],
+            ["벗다", "beot-da", "To take off (clothing)", 1, "👕"],
+            ["보내다", "bo-nae-da", "To send / spend time", 1, "✉️"],
+            ["보다", "bo-da", "To see / watch", 1, "👁️"],
+            ["보이다", "bo-i-da", "To be seen / visible", 1, "👀"],
+            ["복잡하다", "bok-jap-ha-da", "To be complicated / crowded", 1, "🏙️"],
+            ["부르다", "bu-reu-da", "To call / sing / full", 1, "📢"],
+            ["부럽다", "bu-reop-da", "To be envious", 1, "🥺"],
+            ["부치다", "bu-chi-da", "To mail / fry", 1, "📦"],
+            ["부지런하다", "bu-ji-reon-ha-da", "To be diligent", 1, "🐝"],
+            ["부족하다", "bu-jok-ha-da", "To be insufficient", 1, "📉"],
+            ["불편하다", "bul-pyeon-ha-da", "To be uncomfortable", 1, "😣"],
+            ["비싸다", "bi-ssa-da", "To be expensive", 1, "💎"],
+            ["빌리다", "bil-li-da", "To borrow / rent", 1, "📚"],
+            ["빠르다", "ppa-reu-da", "To be fast", 1, "⚡"],
+            ["빠지다", "ppa-ji-da", "To fall into / indulge", 1, "🕳️"],
+            ["빨다", "kkal-da", "To wash laundry / suck", 1, "🧺"],
+            ["빼다", "ppae-da", "To subtract / remove", 1, "➖"],
+            ["뽑다", "ppop-da", "To pick / select / pull out", 1, "🎟️"],
+            ["사다", "sa-da", "To buy", 1, "🛒"],
+            ["사랑하다", "sa-rang-ha-da", "To love", 1, "❤️"],
+            ["사용하다", "sa-yong-ha-da", "To use", 1, "🛠️"],
+            ["살다", "sal-da", "To live", 1, "🏡"],
+            ["살아나다", "sal-a-na-da", "To survive / revive", 1, "🌱"],
+            ["생각하다", "saeng-gak-ha-da", "To think", 1, "💭"],
+            ["서두르다", "seo-du-reu-da", "To hurry", 1, "🚨"],
+            ["서다", "seo-da", "To stand", 1, "🧍"],
+            ["선물하다", "seon-mul-ha-da", "To gift", 1, "🎁"],
+            ["선택하다", "seon-taek-ha-da", "To choose", 1, "🔘"],
+            ["설명하다", "seol-myeong-ha-da", "To explain", 1, "🗣️"],
+            ["성공하다", "seong-gong-ha-da", "To succeed", 1, "🏆"],
+            ["세우다", "se-u-da", "To erect / stop / plan", 1, "🏗️"],
+            ["소개하다", "so-gae-ha-da", "To introduce", 1, "🤝"],
+            ["소수하다", "so-su-ha-da", "To be rare", 1, "🦄"],
+            ["속상하다", "sok-sang-ha-da", "To be upset", 1, "💔"],
+            ["손질하다", "son-jil-ha-da", "To trim / groom", 1, "✂️️"],
+            ["수영하다", "su-yeong-ha-da", "To swim", 1, "🏊"],
+            ["쉬다", "swi-da", "To rest", 1, "🛋️"],
+            ["쉽다", "swip-da", "To be easy", 1, "👌"],
+            ["슬프다", "seul-peu-da", "To be sad", 1, "😢"],
+            ["습하다", "seup-ha-da", "To be humid", 1, "💧"],
+            ["승낙하다", "seung-nak-ha-da", "To consent / approve", 1, "👍"],
+            ["시작하다", "si-jak-ha-da", "To start", 1, "🚀"],
+            ["시원하다", "si-won-ha-da", "To be cool / refreshing", 1, "🍃"],
+            ["시끄럽다", "si-kkeu-reop-da", "To be noisy", 1, "🔊"],
+            ["시키다", "si-ki-da", "To order food / command", 1, "🍽️"],
+            ["식사하다", "sik-sa-ha-da", "To dine", 1, "🍲"],
+            ["신다", "sin-da", "To put on footwear", 1, "👟"],
+            ["신청하다", "sin-cheong-ha-da", "To apply for", 1, "📋"],
+            ["싫어하다", "sir-eo-ha-da", "To dislike", 1, "😒"],
+            ["심심하다", "sim-sim-ha-da", "To be bored", 1, "🥱"],
+            ["싸다", "ssa-da", "To be cheap / pack", 1, "🏷️"],
+            ["싸우다", "ssa-u-da", "To fight", 1, "🥊"],
+            ["씻다", "ssis-da", "To wash", 1, "🧼"],
+            ["아프다", "a-peu-da", "To be sick / hurt", 1, "🤒"],
+            ["안내하다", "an-nae-ha-da", "To guide", 1, "💁"],
+            ["앉다", "an-da", "To sit", 1, "🪑"],
+            ["알다", "al-da", "To know", 1, "💡"],
+            ["약속하다", "yak-sok-ha-da", "To promise", 1, "🤙"],
+            ["얇다", "yal-da", "To be thin", 1, "📄"],
+            ["어둡다", "eo-dup-da", "To be dark", 1, "🌙"],
+            ["어렵다", "eo-ryeop-da", "To be difficult", 1, "🧩"],
+            ["어리다", "eo-ri-da", "To be young", 1, "🧒"],
+            ["언급하다", "eon-geup-ha-da", "To mention", 1, "💬"],
+            ["얻다", "eot-da", "To obtain / gain", 1, "💎"],
+            ["얼다", "eol-da", "To freeze", 1, "🧊"],
+            ["엄격하다", "eom-gyeok-ha-da", "To be strict", 1, "📐"],
+            ["없다", "eop-da", "To not exist / lack", 1, "🚫"],
+            ["에너지넘치다", "e-neo-ji-neom-chi-da", "To be energetic", 1, "⚡"],
+            ["여르다", "yeo-reu-da", "To open up", 1, "🔓"],
+            ["열다", "yeol-da", "To open", 1, "🚪"],
+            ["열심히 하다", "yeol-sim-hi ha-da", "To work hard", 1, "🔥"],
+            ["엽다", "yeop-da", "To be pretty (archaic/variant)", 1, "🌸"],
+            ["예쁘다", "ye-ppeu-da", "To be pretty", 1, "✨"],
+            ["예약하다", "ye-yak-ha-da", "To reserve / book", 1, "📅"],
+            ["오다", "o-da", "To come", 1, "🏃‍♂️"],
+            ["오르다", "o-reu-da", "To rise / climb", 1, "📈"],
+            ["완성하다", "wan-seong-ha-da", "To complete", 1, "✅"],
+            ["외우다", "oe-u-da", "To memorize", 1, "🧠"],
+            ["요리하다", "yo-ri-ha-da", "To cook", 1, "🍳"],
+            ["운동하다", "un-dong-ha-da", "To exercise", 1, "⚽"],
+            ["운전하다", "un-jeon-ha-da", "To drive", 1, "🚗"],
+            ["울다", "ul-da", "To cry", 1, "😭"],
+            ["웃다", "ut-da", "To laugh / smile", 1, "😄"],
+            ["원하다", "won-ha-da", "To want", 1, "💭"],
+            ["위험하다", "wi-hyeom-ha-da", "To be dangerous", 1, "⚠️"],
+            ["유명하다", "yu-myeong-ha-da", "To be famous", 1, "🌟"],
+            ["이해하다", "i-hae-ha-da", "To understand", 1, "💡"],
+            ["이야기하다", "i-ya-gi-ha-da", "To converse", 1, "🗣️"],
+            ["이동하다", "i-dong-ha-da", "To move location", 1, "🚚"],
+            ["이용하다", "i-yong-ha-da", "To utilize", 1, "⚙️"],
+            ["이롱하다", "i-rong-ha-da", "To mock / tease", 1, "😜"],
+            ["일하다", "il-ha-da", "To work", 1, "💼"],
+            ["읽다", "ik-da", "To read", 1, "📖"],
+            ["입다", "ip-da", "To wear clothes", 1, "👗"],
+            ["잊다", "it-da", "To forget", 1, "❓"],
+            ["자다", "ja-da", "To sleep", 1, "😴"],
+            ["자라다", "ja-ra-da", "To grow", 1, "🌱"],
+            ["자랑하다", "ja-rang-ha-da", "To boast", 1, "🦚"],
+            ["작다", "jak-da", "To be small", 1, "🔍"],
+            ["잘하다", "jal-ha-da", "To do well", 1, "👏"],
+            ["잠자다", "jam-ja-da", "To sleep", 1, "🛏️"],
+            ["잡다", "jap-da", "To catch / hold", 1, "✊"],
+            ["재미있다", "jae-mi-it-da", "To be fun / interesting", 1, "🎮"],
+            ["전화하다", "jeon-hwa-ha-da", "To call on phone", 1, "📞"],
+            ["정리하다", "jeong-ri-ha-da", "To organize", 1, "🗂️"],
+            ["조용하다", "jo-yong-ha-da", "To be quiet", 1, "🤫"],
+            ["좁다", "jop-da", "To be narrow", 1, "📏"],
+            ["좋다", "jot-da", "To be good / like", 1, "👍"],
+            ["주다", "ju-da", "To give", 1, "🎁"],
+            ["주문하다", "ju-mun-ha-da", "To order", 1, "📝"],
+            ["죽다", "juk-da", "To die", 1, "💀"],
+            ["준비하다", "jun-bi-ha-da", "To prepare", 1, "🎒"],
+            ["지나다", "ji-na-da", "To pass by", 1, "⏳"],
+            ["지키다", "ji-ki-da", "To guard / protect", 1, "🛡️"],
+            ["질문하다", "jil-mun-ha-da", "To ask question", 1, "❓"],
+            ["집중하다", "jip-jung-ha-da", "To focus / concentrate", 1, "🎯"],
+            ["차갑다", "cha-gap-da", "To be cold (touch)", 1, "🧊"],
+            ["찾다", "chat-da", "To search / find", 1, "🔎"],
+            ["청소하다", "cheong-so-ha-da", "To clean", 1, "🧹"],
+            ["축하하다", "chuk-ha-ha-da", "To congratulate", 1, "🎉"],
+            ["출발하다", "chul-bal-ha-da", "To depart", 1, "🛫"],
+            ["춤추다", "chum-chu-da", "To dance", 1, "💃"],
+            ["취소하다", "chwi-so-ha-da", "To cancel", 1, "🚫"],
+            ["춥다", "chup-da", "To be cold (weather)", 1, "🥶"],
+            ["친절하다", "chin-jeol-ha-da", "To be kind", 1, "😇"],
+            ["크다", "keu-da", "To be big / tall", 1, "🏢"],
+            ["타다", "ta-da", "To ride / burn", 1, "🚌"],
+            ["태어나다", "tae-eo-na-da", "To be born", 1, "👶"],
+            ["퇴근하다", "toe-geun-ha-da", "To leave work", 1, "🏢"],
+            ["틀리다", "teul-ri-da", "To be wrong", 1, "❌"],
+            ["파내다", "pa-nae-da", "To dig out", 1, "⛏️"],
+            ["팔다", "pal-da", "To sell", 1, "🏷️"],
+            ["편하다", "pyeon-ha-da", "To be comfortable", 1, "🛋️"],
+            ["피곤하다", "pi-gon-ha-da", "To be tired", 1, "😫"],
+            ["필요하다", "pil-yo-ha-da", "To need", 1, "⚠️"],
+            ["하나되다", "ha-na-doe-da", "To become one", 1, "🤝"],
+            ["하다", "ha-da", "To do", 1, "▶️"],
+            ["확인하다", "hwak-in-ha-da", "To verify / check", 1, "☑️"],
+            ["휴식하다", "hyu-sik-ha-da", "To take a break", 1, "☕"],
+            ["힘들다", "him-deul-da", "To be tough / hard", 1, "🏋️"],
+
+            // Page 3: Taste (2)
+            ["달다", "dal-da", "Sweet", 2, "🍬"],
+            ["쓰다", "sseu-da", "Bitter", 2, "☕"],
+            ["시크하다", "si-keu-ha-da", "Sour", 2, "🍋"],
+            ["짜다", "jja-da", "Salty", 2, "🧂"],
+            ["매웁다", "mae-up-da", "Spicy", 2, "🌶️"],
+
+            // Page 3: Month (3)
+            ["1월 (일월)", "il-wol", "January", 3, "📅"],
+            ["2월 (이월)", "i-wol", "February", 3, "📅"],
+            ["3월 (삼월)", "sam-wol", "March", 3, "📅"],
+            ["4월 (사월)", "sa-wol", "April", 3, "📅"],
+            ["5월 (오월)", "o-wol", "May", 3, "📅"],
+            ["6월 (유월)", "yu-wol", "June", 3, "📅"],
+            ["7월 (칠월)", "chil-wol", "July", 3, "📅"],
+            ["8월 (팔월)", "pal-wol", "August", 3, "📅"],
+            ["9월 (구월)", "gu-wol", "September", 3, "📅"],
+            ["10월 (시월)", "si-wol", "October", 3, "📅"],
+            ["11월 (십일월)", "sip-il-wol", "November", 3, "📅"],
+            ["12월 (십이월)", "sip-i-wol", "December", 3, "📅"],
+
+            // Page 3: Days of the Week (4)
+            ["월요일", "wol-yo-il", "Monday", 4, "📆"],
+            ["화요일", "hwa-yo-il", "Tuesday", 4, "📆"],
+            ["수요일", "su-yo-il", "Wednesday", 4, "📆"],
+            ["목요일", "mok-yo-il", "Thursday", 4, "📆"],
+            ["금요일", "geum-yo-il", "Friday", 4, "📆"],
+            ["토요일", "to-yo-il", "Saturday", 4, "📆"],
+            ["일요일", "il-yo-il", "Sunday", 4, "📆"],
+
+            // Page 3: Date / Time (5)
+            ["오늘", "o-neul", "Today", 5, "☀️"],
+            ["어제", "eo-je", "Yesterday", 5, "📜"],
+            ["내일", "nae-il", "Tomorrow", 5, "🌅"],
+            ["지금", "ji-geum", "Now", 5, "⏰"],
+            ["아침", "a-chim", "Morning", 5, "🍳"],
+            ["점심", "jeom-sim", "Lunchtime / Afternoon", 5, "☀️"],
+            ["저녁", "jeo-nyeok", "Evening / Dinner", 5, "🌙"],
+            ["밤", "bam", "Night", 5, "🌌"],
+            ["시간", "si-gan", "Hour / Time", 5, "⏱️"],
+            ["분", "bun", "Minute", 5, "⌛"],
+
+            // Page 3: Season (6)
+            ["봄", "bom", "Spring", 6, "🌸"],
+            ["여름", "yeo-reum", "Summer", 6, "🏖️"],
+            ["가을", "ga-eul", "Autumn / Fall", 6, "🍁"],
+            ["겨울", "gyeo-ul", "Winter", 6, "❄️"],
+
+            // Page 3: Weather (7)
+            ["날씨", "nal-ssi", "Weather", 7, "🌤️"],
+            ["비", "bi", "Rain", 7, "🌧️"],
+            ["눈", "nun", "Snow", 7, "❄️"],
+            ["바람", "ba-ram", "Wind", 7, "💨"],
+            ["구름", "gu-reum", "Cloud", 7, "☁️"],
+            ["태양", "tae-yang", "Sun", 7, "☀️"],
+
+            // Page 3: Nature (8)
+            ["산", "san", "Mountain", 8, "⛰️"],
+            ["강", "gang", "River", 8, "🏞️"],
+            ["바다", "ba-da", "Sea / Ocean", 8, "🌊"],
+            ["하늘", "ha-neul", "Sky", 8, "🌌"],
+            ["나무", "na-mu", "Tree", 8, "🌲"],
+            ["꽃", "kkot", "Flower", 8, "🌻"],
+            ["땅", "ttang", "Ground / Land", 8, "🌍"],
+            ["돌", "dol", "Stone / Rock", 8, "🪨"],
+
+            // Page 4: Native Korean Numbers (9)
+            ["하나", "ha-na", "One (1)", 9, "1️⃣"],
+            ["둘", "dul", "Two (2)", 9, "2️⃣"],
+            ["셋", "set", "Three (3)", 9, "3️⃣"],
+            ["넷", "net", "Four (4)", 9, "4️⃣"],
+            ["다섯", "da-seot", "Five (5)", 9, "5️⃣"],
+            ["여섯", "yeo-seot", "Six (6)", 9, "6️⃣"],
+            ["일곱", "il-gop", "Seven (7)", 9, "7️⃣"],
+            ["여덟", "yeo-deolp", "Eight (8)", 9, "8️⃣"],
+            ["아홉", "a-hop", "Nine (9)", 9, "9️⃣"],
+            ["열", "yeol", "Ten (10)", 9, "🔟"],
+            ["스물", "seu-mul", "Twenty (20)", 9, "2️⃣0️⃣"],
+            ["서른", "seo-reun", "Thirty (30)", 9, "3️⃣0️⃣"],
+            ["마흔", "ma-heun", "Forty (40)", 9, "4️⃣0️⃣"],
+            ["쉰", "swin", "Fifty (50)", 9, "5️⃣0️⃣"],
+            ["예순", "ye-sun", "Sixty (60)", 9, "6️⃣0️⃣"],
+            ["일흔", "il-heun", "Seventy (70)", 9, "7️⃣0️⃣"],
+            ["여든", "yeo-deun", "Eighty (80)", 9, "8️⃣0️⃣"],
+            ["아흔", "a-heun", "Ninety (90)", 9, "9️⃣0️⃣"],
+            ["백", "baek", "One Hundred (100)", 9, "💯"],
+
+            // Page 4: Sino-Korean Numbers (10)
+            ["일", "il", "1 (Sino)", 10, "1️⃣"],
+            ["이", "i", "2 (Sino)", 10, "2️⃣"],
+            ["삼", "sam", "3 (Sino)", 10, "3️⃣"],
+            ["사", "sa", "4 (Sino)", 10, "4️⃣"],
+            ["오", "o", "5 (Sino)", 10, "5️⃣"],
+            ["육", "yuk", "6 (Sino)", 10, "6️⃣"],
+            ["칠", "chil", "7 (Sino)", 10, "7️⃣"],
+            ["팔", "pal", "8 (Sino)", 10, "8️⃣"],
+            ["구", "gu", "9 (Sino)", 10, "9️⃣"],
+            ["십", "sip", "10 (Sino)", 10, "🔟"],
+            ["백", "baek", "100 (Hundred)", 10, "💯"],
+            ["천", "cheon", "1,000 (Thousand)", 10, "🔢"],
+            ["만", "man", "10,000 (Ten Thousand)", 10, "💵"],
+            ["억", "eok", "100,000,000 (Hundred Million)", 10, "🏦"],
+            ["영 / 공", "yeong / gong", "Zero (0)", 10, "0️⃣"],
+            ["첫째", "cheot-jjae", "First", 10, "🥇"],
+            ["둘째", "dul-jjae", "Second", 10, "🥈"],
+            ["셋째", "set-jjae", "Third", 10, "🥉"],
+            ["개", "gae", "Count items", 10, "📦"],
+            ["명", "myeong", "Count people", 10, "👥"],
+            ["마리", "ma-ri", "Count animals", 10, "🐕"],
+            ["병", "byeong", "Count bottles", 10, "🍾"],
+            ["잔", "jan", "Count cups", 10, "☕"],
+
+            // Page 4: Family (11)
+            ["가족", "ga-jok", "Family", 11, "👨‍👩‍👧‍👦"],
+            ["부모님", "bu-mo-nim", "Parents", 11, "👵👨"],
+            ["아버지", "a-beo-ji", "Father", 11, "👨"],
+            ["아빠", "a-ppa", "Dad", 11, "👨‍🦰"],
+            ["어머니", "eo-meo-ni", "Mother", 11, "👩"],
+            ["엄마", "eom-ma", "Mom", 11, "👩‍🦱"],
+            ["할아버지", "hal-a-beo-ji", "Grandfather", 11, "👴"],
+            ["할머니", "hal-meo-ni", "Grandmother", 11, "👵"],
+            ["형", "hyeong", "Older Brother (male speaking)", 11, "👦"],
+            ["누나", "nu-na", "Older Sister (male speaking)", 11, "👧"],
+            ["오빠", "o-ppa", "Older Brother (female speaking)", 11, "👱‍♂️"],
+            ["언니", "eon-ni", "Older Sister (female speaking)", 11, "👱‍♀️"],
+            ["동생", "dong-saeng", "Younger Sibling", 11, "👶"],
+            ["남동생", "nam-dong-saeng", "Younger Brother", 11, "👦"],
+            ["여동생", "yeo-dong-saeng", "Younger Sister", 11, "👧"],
+            ["아들", "a-deul", "Son", 11, "👦"],
+            ["딸", "ttal", "Daughter", 11, "👧"],
+            ["남편", "nam-pyeon", "Husband", 11, "🤵"],
+            ["아내", "a-nae", "Wife", 11, "👰"],
+            ["삼촌", "sam-chon", "Uncle", 11, "👨‍💼"],
+            ["이모", "i-mo", "Maternal Aunt", 11, "👩‍💼"],
+            ["고모", "go-mo", "Paternal Aunt", 11, "👩‍🦰"],
+            ["사촌", "sa-chon", "Cousin", 11, "🧑"],
+            ["조카", "jo-ka", "Nephew / Niece", 11, "👶"],
+            ["손자", "son-ja", "Grandson", 11, "👦"],
+            ["손녀", "son-nyeo", "Granddaughter", 11, "👧"],
+            ["친척", "chin-cheok", "Relatives", 11, "👨‍👩‍👧"],
+            ["아이", "a-i", "Child / Kid", 11, "🧒"],
+            ["어른", "eo-reun", "Adult", 11, "🧑"],
+            ["아기", "a-gi", "Baby", 11, "👶"],
+            ["남자", "nam-ja", "Man / Male", 11, "👨"],
+            ["여자", "yeo-ja", "Woman / Female", 11, "👩"],
+            ["친구", "chin-gu", "Friend", 11, "🧑‍🤝‍🧑"],
+
+            // Page 4: Color (12)
+            ["색깔", "saek-kkal", "Color", 12, "🎨"],
+            ["빨간색", "kkal-gan-saek", "Red", 12, "🔴"],
+            ["파란색", "pa-ran-saek", "Blue", 12, "🔵"],
+            ["노란색", "no-ran-saek", "Yellow", 12, "🟡"],
+            ["초록색", "cho-rok-saek", "Green", 12, "🟢"],
+            ["검은색", "geom-eun-saek", "Black", 12, "⚫"],
+            ["하얀색", "ha-yan-saek", "White", 12, "⚪"],
+            ["보라색", "bo-ra-saek", "Purple", 12, "🟣"],
+            ["주황색", "ju-hwang-saek", "Orange", 12, "🟠"],
+            ["분홍색", "bun-hong-saek", "Pink", 12, "🌸"],
+            ["갈색", "gal-saek", "Brown", 12, "🟤"],
+            ["회색", "hoe-saek", "Gray", 12, "🔘"],
+            ["금색", "geum-saek", "Gold", 12, "🪙"],
+            ["은색", "eun-saek", "Silver", 12, "🥈"],
+            ["투명색", "tu-myeong-saek", "Transparent", 12, "🪟"],
+            ["밝은색", "bal-geun-saek", "Light Color", 12, "☀️"],
+            ["어두운색", "eo-du-un-saek", "Dark Color", 12, "🌙"],
+
+            // Page 5: Electric Appliances (13)
+            ["냉장고", "naeng-jang-go", "Refrigerator", 13, "🧊"],
+            ["세탁기", "se-tak-gi", "Washing Machine", 13, "🧺"],
+            ["텔레비전", "tel-le-bi-jeon", "Television", 13, "📺"],
+            ["컴퓨터", "keom-pyu-teo", "Computer", 13, "💻"],
+            ["에어컨", "e-eo-keon", "Air Conditioner", 13, "❄️"],
+            ["청소기", "cheong-so-gi", "Vacuum Cleaner", 13, "🧹"],
+            ["전자레인지", "jeon-ja-re-in-ji", "Microwave", 13, "🍲"],
+            ["선풍기", "seon-pung-gi", "Electric Fan", 13, "🌬️"],
+            ["전화기", "jeon-hwa-gi", "Telephone", 13, "☎️"],
+            ["스마트폰", "seu-ma-teu-pon", "Smartphone", 13, "📱"],
+            ["헤어드라이어", "he-eo-deu-ra-i-eo", "Hair Dryer", 13, "💨"],
+            ["다미리", "da-mi-ri", "Iron", 13, "👔"],
+            ["라디오", "ra-di-o", "Radio", 13, "📻"],
+            ["카메라", "ka-me-ra", "Camera", 13, "📷"],
+            ["시계", "si-gye", "Clock / Watch", 13, "⏰"],
+
+            // Page 5: Pronoun (14)
+            ["나 / 저", "na / jeo", "I / Me", 14, "🙋‍♂️"],
+            ["너 / 당신", "neo / dang-sin", "You", 14, "🫵"],
+            ["우리", "u-ri", "We / Us", 14, "👥"],
+            ["그", "geu", "He / Him", 14, "👨"],
+            ["그녀", "geu-nyeo", "She / Her", 14, "👩"],
+            ["이것", "i-geot", "This thing", 14, "👇"],
+            ["그것 / 저것", "geu-geot / jeo-geot", "That thing", 14, "👉"],
+
+            // Page 5-6: Household Items & Things (15) - 149 Items
+            ["가방", "ga-bang", "Bag / Backpack", 15, "🎒"],
+            ["안경", "an-gyeong", "Eyeglasses", 15, "👓"],
+            ["우산", "u-san", "Umbrella", 15, "☂️"],
+            ["모자", "mo-ja", "Hat / Cap", 15, "🧢"],
+            ["신발", "sin-bal", "Shoes", 15, "👟"],
+            ["옷", "ot", "Clothes", 15, "👕"],
+            ["바지", "ba-ji", "Pants / Trousers", 15, "👖"],
+            ["치마", "chi-ma", "Skirt", 15, "👗"],
+            ["양말", "yang-mal", "Socks", 15, "🧦"],
+            ["장갑", "jang-gap", "Gloves", 15, "🧤"],
+            ["수건", "su-geon", "Towel", 15, "🧼"],
+            ["비누", "bi-nu", "Soap", 15, "🧼"],
+            ["치약", "chi-yak", "Toothpaste", 15, "🪥"],
+            ["칫솔", "chit-sol", "Toothbrush", 15, "🪥"],
+            ["샴푸", "syam-pu", "Shampoo", 15, "🧴"],
+            ["휴지", "hyu-ji", "Toilet paper / Tissue", 15, "🧻"],
+            ["거울", "geo-ul", "Mirror", 15, "🪞"],
+            ["빗", "bit", "Comb / Hairbrush", 15, "🪮"],
+            ["침대", "chim-dae", "Bed", 15, "🛏️"],
+            ["이불", "i-bul", "Blanket / Quilt", 15, "🛋️"],
+            ["베개", "be-gae", "Pillow", 15, "🛋️"],
+            ["책상", "chaek-sang", "Desk", 15, "🖥️"],
+            ["의자", "ui-ja", "Chair", 15, "🪑"],
+            ["문", "mun", "Door", 15, "🚪"],
+            ["창문", "chang-mun", "Window", 15, "🪟"],
+            ["열쇠", "yeol-soe", "Key", 15, "🔑"],
+            ["지갑", "ji-gap", "Wallet / Purse", 15, "👛"],
+            ["돈", "don", "Money", 15, "💵"],
+            ["책", "chaek", "Book", 15, "📖"],
+            ["공책", "gong-chaek", "Notebook", 15, "📓"],
+            ["연필", "yeon-pil", "Pencil", 15, "✏️"],
+            ["볼펜", "bol-pen", "Ballpoint Pen", 15, "🖊️"],
+            ["지우개", "ji-u-gae", "Eraser", 15, "🧹"],
+            ["가위", "ga-wi", "Scissors", 15, "✂️"],
+            ["풀", "pul", "Glue", 15, "🧪"],
+            ["자", "ja", "Ruler", 15, "📏"],
+            ["컵", "keop", "Cup / Glass", 15, "🥛"],
+            ["접시", "jeop-si", "Plate / Dish", 15, "🍽️"],
+            ["그릇", "geu-reut", "Bowl", 15, "🥣"],
+            ["숟가락", "sut-ga-rak", "Spoon", 15, "🥄"],
+            ["젓가락", "jeot-ga-rak", "Chopsticks", 15, "🥢"],
+            ["칼", "kal", "Knife", 15, "🔪"],
+            ["냄비", "naem-bi", "Cooking Pot", 15, "🍲"],
+            ["프라이팬", "peu-ra-i-paen", "Frying Pan", 15, "🍳"],
+            ["병", "byeong", "Bottle", 15, "🍾"],
+            ["상자", "sang-ja", "Box / Carton", 15, "📦"],
+            ["시계", "si-gye", "Watch / Clock", 15, "⌚"],
+            ["화장품", "hwa-jang-pum", "Cosmetics", 15, "💄"],
+            ["약", "yak", "Medicine", 15, "💊"],
+            ["달력", "dal-ryeok", "Calendar", 15, "📅"],
+            ["지도", "ji-do", "Map", 15, "🗺️"],
+            ["사진", "sa-jin", "Photo / Picture", 15, "🖼️"],
+            ["편지", "pyeon-ji", "Letter", 15, "✉️"],
+            ["우표", "u-pyo", "Stamp", 15, "✉️"],
+            ["신문", "sin-mun", "Newspaper", 15, "📰"],
+            ["잡지", "jap-ji", "Magazine", 15, "📖"],
+            ["여권", "yeo-gwon", "Passport", 15, "📕"],
+            ["티켓", "ti-ket", "Ticket", 15, "🎟️"],
+            ["우산", "u-san", "Rain Umbrella", 15, "☔"],
+            ["빗자루", "bit-ja-ru", "Broom", 15, "🧹"],
+            ["쓰레기통", "sseu-re-gi-tong", "Trash Can", 15, "🗑️"],
+            ["화분", "hwa-bun", "Flower Pot", 15, "🪴"],
+
+            // Page 6-7: Occupation (16) - 41 Items
+            ["선생님", "seon-saeng-nim", "Teacher", 16, "👨‍🏫"],
+            ["학생", "hak-saeng", "Student", 16, "🧑‍🎓"],
+            ["의사", "ui-sa", "Doctor", 16, "👨‍⚕️"],
+            ["간호사", "gan-ho-sa", "Nurse", 16, "👩‍⚕️️"],
+            ["경찰관", "gyeong-chal-gwan", "Police Officer", 16, "👮"],
+            ["소방관", "so-bang-gwan", "Firefighter", 16, "🧑‍🚒"],
+            ["군인", "gun-in", "Soldier", 16, "🎖️"],
+            ["요리사", "yo-ri-sa", "Chef / Cook", 16, "🧑‍🍳"],
+            ["운전기사", "un-jeon-gi-sa", "Driver", 16, "🚌"],
+            ["회사원", "hoe-sa-won", "Office Worker", 16, "👨‍💼"],
+            ["은행원", "eun-haeng-won", "Bank Teller", 16, "🏦"],
+            ["공무원", "gong-mu-won", "Civil Servant", 16, "🏛️"],
+            ["가수", "ga-su", "Singer", 16, "🎤"],
+            ["배우", "bae-u", "Actor / Actress", 16, "🎭"],
+            ["운동선수", "un-dong-seon-su", "Athlete", 16, "⚽"],
+            ["화가", "hwa-ga", "Painter / Artist", 16, "🎨"],
+            ["작가", "jak-ga", "Writer / Author", 16, "✍️"],
+            ["변호사", "byeon-ho-sa", "Lawyer", 16, "⚖️"],
+            ["판사", "pan-sa", "Judge", 16, "👨‍⚖️"],
+            ["기자", "gi-ja", "Reporter / Journalist", 16, "🎙️"],
+            ["농부", "nong-bu", "Farmer", 16, "👨‍🌾"],
+            ["어부", "eo-bu", "Fisherman", 16, "🎣"],
+            ["미용사", "mi-yong-sa", "Hairdresser", 16, "✂️"],
+            ["약사", "yak-sa", "Pharmacist", 16, "💊"],
+            ["수의사", "su-ui-sa", "Veterinarian", 16, "🩺"],
+            ["비행기 조종사", "bi-haeng-gi jo-jong-sa", "Pilot", 16, "👨‍✈️"],
+            ["승무원", "seung-mu-won", "Flight Attendant", 16, "✈️"],
+            ["건축가", "geon-chuk-ga", "Architect", 16, "📐"],
+            ["엔지니어", "en-ji-ni-eo", "Engineer", 16, "⚙️"],
+            ["프로그래머", "peu-ro-geu-rae-meo", "Programmer", 16, "💻"],
+
+            // Page 7-8: Place (17) - 104 Items
+            ["학교", "hak-gyo", "School", 17, "🏫"],
+            ["집", "jip", "Home / House", 17, "🏠"],
+            ["회사", "hoe-sa", "Company / Office", 17, "🏢"],
+            ["병원", "byeong-won", "Hospital", 17, "🏥"],
+            ["약국", "yak-guk", "Pharmacy", 17, "💊"],
+            ["은행", "eun-haeng", "Bank", 17, "🏦"],
+            ["우체국", "u-che-guk", "Post Office", 17, "🏣"],
+            ["경찰서", "gyeong-chal-seo", "Police Station", 17, "🏢"],
+            ["소방서", "so-bang-seo", "Fire Station", 17, "🚒"],
+            ["공항", "gong-hang", "Airport", 17, "🛫"],
+            ["역", "yeok", "Train / Sub Station", 17, "🚉"],
+            ["정류장", "jeong-ryu-jang", "Bus Stop", 17, "🚏"],
+            ["식당", "sik-dang", "Restaurant", 17, "🍽️"],
+            ["카페", "ka-pe", "Cafe / Coffee Shop", 17, "☕"],
+            ["시절 / 시장", "si-jang", "Market", 17, "🛒"],
+            ["마트", "ma-teu", "Supermarket", 17, "🏬"],
+            ["백화점", "baek-hwa-jeom", "Department Store", 17, "🛍️"],
+            ["도서관", "do-seo-gwan", "Library", 17, "📚"],
+            ["박물관", "bak-mul-gwan", "Museum", 17, "🏛️"],
+            ["미술관", "mi-sul-gwan", "Art Gallery", 17, "🖼️"],
+            ["공원", "gong-won", "Park", 17, "🏞️"],
+            ["영화관 / 극장", "yeong-hwa-gwan", "Cinema / Theater", 17, "🎬"],
+            ["화장실", "hwa-jang-sil", "Restroom / Toilet", 17, "🚻"],
+            ["호텔", "ho-tel", "Hotel", 17, "🏨"],
+            ["미용실", "mi-yong-sil", "Hair Salon", 17, "💈"],
+            ["약국", "yak-guk", "Drugstore", 17, "💊"],
+            ["세탁소", "se-tak-so", "Laundromat / Dry Cleaner", 17, "🧺"],
+
+            // Page 8: Parts of Body (18) - 28 Items
+            ["머리", "meo-ri", "Head / Hair", 18, "👤"],
+            ["얼굴", "eol-gul", "Face", 18, "😀"],
+            ["눈", "nun", "Eye", 18, "👁️"],
+            ["코", "ko", "Nose", 18, "👃"],
+            ["입", "ip", "Mouth", 18, "👄"],
+            ["귀", "gwi", "Ear", 18, "👂"],
+            ["이 / 치아", "i / chi-a", "Tooth / Teeth", 18, "🦷"],
+            ["목", "mok", "Neck / Throat", 18, "🦒"],
+            ["어깨", "eo-kkae", "Shoulder", 18, "🦾"],
+            ["팔", "pal", "Arm", 18, "💪"],
+            ["손", "son", "Hand", 18, "✋"],
+            ["손가락", "son-ga-rak", "Finger", 18, "👆"],
+            ["가슴", "ga-seum", "Chest", 18, "🫀"],
+            ["배", "bae", "Stomach / Belly", 18, "🤰"],
+            ["허리", "heo-ri", "Waist / Back", 18, "🧍"],
+            ["다리", "da-ri", "Leg", 18, "🦵"],
+            ["발", "bal", "Foot", 18, "🦶"],
+            ["발가락", "bal-ga-rak", "Toe", 18, "🦶"],
+            ["피부", "pi-bu", "Skin", 18, "✨"],
+            ["피", "pi", "Blood", 18, "🩸"],
+            ["심장", "sim-jang", "Heart", 18, "❤️"],
+
+            // Page 8: Direction (19) - 21 Items
+            ["위", "wi", "Above / On", 19, "⬆️"],
+            ["아래 / 밑", "a-rae / mit", "Below / Under", 19, "⬇️"],
+            ["앞", "ap", "Front", 19, "➡️"],
+            ["뒤", "dwi", "Back / Behind", 19, "⬅️"],
+            ["옆", "yeop", "Side / Next to", 19, "↔️"],
+            ["오른쪽", "o-reun-jjok", "Right Side", 19, "👉"],
+            ["왼쪽", "oen-jjok", "Left Side", 19, "👈"],
+            ["안 / 속", "an / sok", "Inside", 19, "📥"],
+            ["밖", "bak", "Outside", 19, "📤"],
+            ["동쪽", "dong-jjok", "East", 19, "🧭"],
+            ["서쪽", "seo-jjok", "West", 19, "🧭"],
+            ["남쪽", "nam-jjok", "South", 19, "🧭"],
+            ["북쪽", "buk-jjok", "North", 19, "🧭"],
+            ["가운데 / 중간", "ga-un-de", "Middle / Center", 19, "🎯"],
+
+            // Page 8: Animal (20) - 22 Items
+            ["개 / 강아지", "gae / gang-a-ji", "Dog / Puppy", 20, "🐕"],
+            ["고양이", "go-yang-i", "Cat", 20, "🐈"],
+            ["소", "so", "Cow / Cattle", 20, "🐄"],
+            ["돼지", "dwae-ji", "Pig", 20, "🐖"],
+            ["말", "mal", "Horse", 20, "🐎"],
+            ["양", "yang", "Sheep", 20, "🐑"],
+            ["닭", "dak", "Chicken", 20, "🐔"],
+            ["새", "sae", "Bird", 20, "🐦"],
+            ["호랑이", "ho-rang-i", "Tiger", 20, "🐅"],
+            ["사자", "sa-ja", "Lion", 20, "🦁"],
+            ["곰", "gom", "Bear", 20, "🐻"],
+            ["토끼", "to-kki", "Rabbit", 20, "🐇"],
+            ["원숭이", "won-sung-i", "Monkey", 20, "🐒"],
+            ["코끼리", "ko-kki-ri", "Elephant", 20, "🐘"],
+            ["물고기", "mul-go-gi", "Fish", 20, "🐟"],
+            ["뱀", "baem", "Snake", 20, "🐍"],
+
+            // Page 8-9: Vegetable / Crops (21) - 26 Items
+            ["야채 / 채소", "ya-chae / chae-so", "Vegetables", 21, "🥗"],
+            ["김치", "gim-chi", "Kimchi", 21, "🥬"],
+            ["감자", "gam-ja", "Potato", 21, "🥔"],
+            ["고구마", "go-gu-ma", "Sweet Potato", 21, "🍠"],
+            ["당근", "dang-geun", "Carrot", 21, "🥕"],
+            ["양파", "yang-pa", "Onion", 21, "🧅"],
+            ["마늘", "ma-neul", "Garlic", 21, "🧄"],
+            ["배추", "bae-chu", "Napa Cabbage", 21, "🥬"],
+            ["오이", "o-i", "Cucumber", 21, "🥒"],
+            ["고추", "go-chu", "Chili Pepper", 21, "🌶️"],
+            ["버섯", "beot-seot", "Mushroom", 21, "🍄"],
+            ["콩", "kong", "Bean / Soybean", 21, "🫘"],
+            ["쌀", "ssal", "Uncooked Rice", 21, "🌾"],
+
+            // Page 9: Fruits (22) - 10 Items
+            ["과일", "gwa-il", "Fruit", 22, "🍎"],
+            ["사과", "sa-gwa", "Apple", 22, "🍎"],
+            ["바나나", "ba-na-na", "Banana", 22, "🍌"],
+            ["포도", "po-do", "Grape", 22, "🍇"],
+            ["수박", "su-bak", "Watermelon", 22, "🍉"],
+            ["딸기", "ttal-gi", "Strawberry", 22, "🍓"],
+            ["오렌지", "o-ren-ji", "Orange", 22, "🍊"],
+            ["복숭아", "bok-sung-a", "Peach", 22, "🍑"],
+            ["배", "bae", "Korean Pear", 22, "🍐"],
+            ["귤", "gyul", "Tangerine", 22, "🍊"],
+
+            // Page 9: Drinks (23) - 9 Items
+            ["음료수", "eum-ryo-su", "Beverage / Drink", 23, "🥤"],
+            ["물", "mul", "Water", 23, "💧"],
+            ["커피", "keo-pi", "Coffee", 23, "☕"],
+            ["차", "cha", "Tea", 23, "🍵"],
+            ["우유", "u-yu", "Milk", 23, "🥛"],
+            ["주스", "ju-seu", "Juice", 23, "🧃"],
+            ["맥주", "maek-ju", "Beer", 23, "🍺"],
+            ["소주", "so-ju", "Soju", 23, "🍶"],
+            ["와인", "wa-in", "Wine", 23, "🍷"],
+
+            // Page 9: Food (24) - 23 Items
+            ["음식", "eum-sik", "Food", 24, "🍲"],
+            ["밥", "bap", "Cooked Rice / Meal", 24, "🍚"],
+            ["국 / 찌개", "guk / jji-gae", "Soup / Stew", 24, "🍲"],
+            ["고기", "go-gi", "Meat", 24, "🥩"],
+            ["불고기", "bul-go-gi", "Bulgogi (Grilled Meat)", 24, "🥩"],
+            ["비빔밥", "bi-bim-bap", "Bibimbap", 24, "🥣"],
+            ["라면", "ra-myeon", "Ramen / Instant Noodle", 24, "🍜"],
+            ["빵", "ppang", "Bread", 24, "🍞"],
+            ["계란 / 달걀", "gye-ran", "Egg", 24, "🥚"],
+            ["치킨", "chi-kin", "Fried Chicken", 24, "🍗"],
+            ["피자", "pi-ja", "Pizza", 24, "🍕"],
+            ["햄버거", "haem-beo-geo", "Hamburger", 24, "🍔"],
+            ["떡볶이", "tteok-bok-ki", "Spicy Rice Cakes", 24, "🍢"],
+            ["만두", "man-du", "Dumpling", 24, "🥟"],
+            ["과자", "gwa-ja", "Snack / Cookie", 24, "🍪"],
+            ["사탕", "sa-tang", "Candy", 24, "🍬"],
+            ["초콜릿", "cho-kol-rit", "Chocolate", 24, "🍫"],
+            ["아이스크림", "a-i-seu-keu-rim", "Ice Cream", 24, "🍦"],
+
+            // Page 9: Religion (25) - 9 Items
+            ["종교", "jong-gyo", "Religion", 25, "⛪"],
+            ["기독교", "gi-dok-gyo", "Christianity", 25, "✝️"],
+            ["천주교", "cheon-ju-gyo", "Catholicism", 25, "⛪"],
+            ["불교", "bul-gyo", "Buddhism", 25, "☸️"],
+            ["이슬람교", "i-seul-ram-gyo", "Islam", 25, "☪️"],
+            ["교회", "gyo-hoe", "Church", 25, "⛪"],
+            ["절 / 사찰", "jeol", "Buddhist Temple", 25, "🛕"],
+            ["기도하다", "gi-do-ha-da", "To pray", 25, "🙏"],
+
+            // Page 9: School Subjects (26) - 10 Items
+            ["과목", "gwa-mok", "Subject", 26, "📚"],
+            ["한국어 / 국어", "han-guk-eo", "Korean Language", 26, "🇰🇷"],
+            ["영어", "yeong-eo", "English", 26, "🔤"],
+            ["수학", "su-hak", "Mathematics", 26, "📐"],
+            ["과학", "gwa-hak", "Science", 26, "🔬"],
+            ["역사", "yeok-sa", "History", 26, "📜"],
+            ["음악", "eum-ak", "Music", 26, "🎵"],
+            ["미술", "mi-sul", "Art", 26, "🎨"],
+            ["체육", "che-yuk", "Physical Education", 26, "⚽"],
+
+            // Page 9: Personal Info (27) - 9 Items
+            ["이름", "i-reum", "Name", 27, "🪪"],
+            ["나이", "na-i", "Age", 27, "🎂"],
+            ["생일", "saeng-il", "Birthday", 27, "🎉"],
+            ["주소", "ju-so", "Address", 27, "🏠"],
+            ["전화번호", "jeon-hwa-beon-ho", "Phone Number", 27, "📞"],
+            ["국적", "guk-jeok", "Nationality", 27, "🌐"],
+            ["직업", "jik-eob", "Occupation", 27, "💼"],
+            ["취미", "chwi-mi", "Hobby", 27, "🎨"],
+
+            // Page 9-10: Transportation (28) - 10 Items
+            ["교통", "gyo-tong", "Transportation", 28, "🚦"],
+            ["버스", "beo-seu", "Bus", 28, "🚌"],
+            ["택시", "taek-si", "Taxi", 28, "🚕"],
+            ["지하철", "ji-ha-cheol", "Subway", 28, "🚇"],
+            ["기차", "gi-cha", "Train", 28, "🚆"],
+            ["비행기", "bi-haeng-gi", "Airplane", 28, "✈️"],
+            ["배", "bae", "Ship / Boat", 28, "🚢"],
+            ["자전거", "ja-jeon-geo", "Bicycle", 28, "🚲"],
+            ["오토바이", "o-to-ba-i", "Motorcycle", 28, "🛵"],
+            ["자동차 / 차", "ja-dong-cha", "Car / Auto", 28, "🚗"],
+
+            // Page 10: Adverbs / Adverbials (29) - 83 Items
+            ["매우 / 아주", "mae-u / a-ju", "Very / Extremely", 29, "💥"],
+            ["너무", "neo-mu", "Too much / So", 29, "❗"],
+            ["정말 / 진짜", "jeong-mal / jin-jja", "Really / Truly", 29, "💯"],
+            ["가장 / 제일", "ga-jang / je-il", "Most / Best", 29, "🥇"],
+            ["조금 / 좀", "jo-geum / jom", "A little", 29, "🤏"],
+            ["많이", "man-i", "A lot / Many", 29, "📦"],
+            ["자주", "ja-ju", "Often / Frequently", 29, "🔄"],
+            ["항상 / 언제나", "hang-sang", "Always", 29, "♾️"],
+            ["가끔", "ga-kkeum", "Sometimes", 29, "🎲"],
+            ["전혀", "jeon-hyeo", "Not at all (with neg)", 29, "🚫"],
+            ["다시", "da-si", "Again", 29, "🔁"],
+            ["함께 / 같이", "ham-kke / gat-i", "Together", 29, "🧑‍🤝‍🧑"],
+            ["혼자", "hon-ja", "Alone / By oneself", 29, "👤"],
+            ["보통", "bo-tong", "Usually / Normally", 29, "📊"],
+            ["미리", "mi-ri", "In advance / Ahead of time", 29, "⏰"],
+            ["벌써 / 이미", "beol-sseo / i-mi", "Already", 29, "⚡"],
+
+            // Page 10-11: Sport / Hobby (30) - 14 Items
+            ["운동", "un-dong", "Sports / Exercise", 30, "⚽"],
+            ["축구", "chuk-gu", "Soccer / Football", 30, "⚽"],
+            ["농구", "nong-gu", "Basketball", 30, "🏀"],
+            ["야구", "ya-gu", "Baseball", 30, "⚾"],
+            ["배구", "bae-gu", "Volleyball", 30, "🏐"],
+            ["테니스", "te-ni-seu", "Tennis", 30, "🎾"],
+            ["수영", "su-yeong", "Swimming", 30, "🏊"],
+            ["태권도", "tae-gwon-do", "Taekwondo", 30, "🥋"],
+            ["등산", "deung-san", "Hiking / Climbing", 30, "🏔️"],
+            ["독서", "dok-seo", "Reading", 30, "📖"],
+            ["음악 감상", "eum-ak gam-sang", "Listening to music", 30, "🎧"],
+            ["영화 감상", "yeong-hwa gam-sang", "Watching movies", 30, "🎬"],
+            ["여행", "yeo-haeng", "Travel / Trip", 30, "🧳"],
+            ["사진 촬영", "sa-jin chwal-yeong", "Photography", 30, "📸"],
+
+            // Page 11: Demonstratives (31) - 3 Items
+            ["이 (것)", "i (geot)", "This (here)", 31, "👇"],
+            ["그 (것)", "geu (geot)", "That (near listener)", 31, "👉"],
+            ["저 (것)", "jeo (geot)", "That over there", 31, "👉"],
+
+            // Page 11: More Vocabulary (32) - 84 Items
+            ["문화", "mun-hwa", "Culture", 32, "🏛️"],
+            ["역사", "yeok-sa", "History", 32, "📜"],
+            ["사회", "sa-hoe", "Society", 32, "🌐"],
+            ["경제", "gyeong-je", "Economy", 32, "📈"],
+            ["정치", "jeong-chi", "Politics", 32, "🏛️"],
+            ["과학", "gwa-hak", "Science", 32, "🔬"],
+            ["기술", "gi-sul", "Technology", 32, "💻"],
+            ["환경", "hwan-gyeong", "Environment", 32, "🌱"],
+            ["자연", "ja-yeon", "Nature", 32, "🍃"],
+            ["세계", "se-gye", "World", 32, "🌍"],
+            ["지구", "ji-gu", "Earth", 32, "🌎"],
+
+            // Page 11-12: Adverb of Time (33) - 19 Items
+            ["아침에", "a-chim-e", "In the morning", 33, "🌅"],
+            ["낮에", "naj-e", "During daytime", 33, "☀️"],
+            ["저녁에", "jeo-nyeok-e", "In the evening", 33, "🌆"],
+            ["밤에", "bam-e", "At night", 33, "🌙"],
+            ["요즘 / 최근", "yo-jeum / chwe-geun", "Lately / Nowadays", 33, "📅"],
+            ["옛날에", "yen-nal-e", "Long ago / In the past", 33, "📜"],
+            ["나중에", "na-jung-e", "Later", 33, "⏱️"],
+            ["곧", "got", "Soon / Shortly", 33, "⚡"],
+
+            // Page 12: Adverb of Place (34) - 8 Items
+            ["여기", "yeo-gi", "Here", 34, "📍"],
+            ["거기", "geo-gi", "There", 34, "👉"],
+            ["저기", "jeo-gi", "Over there", 34, "👉"],
+            ["어디", "eo-di", "Where", 34, "❓"],
+            ["근처", "geun-cheo", "Nearby / Vicinity", 34, "🗺️"],
+
+            // Page 12: Adverb of Manner (35) - 15 Items
+            ["천천히", "cheon-cheon-hi", "Slowly", 35, "🐢"],
+            ["빨리", "kkal-ri", "Quickly / Fast", 35, "⚡"],
+            ["열심히", "yeol-sim-hi", "Diligently / Hard", 35, "🔥"],
+            ["조용히", "jo-yong-hi", "Quietly", 35, "🤫"],
+            ["자세히", "ja-se-hi", "In detail", 35, "🔍"],
+
+            // Page 12: Adverb of Frequency (36) - 10 Items
+            ["매일", "mae-il", "Everyday", 36, "📅"],
+            ["자주", "ja-ju", "Frequently", 36, "🔄"],
+            ["가끔", "ga-kkeum", "Occasionally", 36, "🎲"],
+            ["절대", "jeol-dae", "Never (with negative)", 36, "🚫"],
+
+            // Page 12: Interrogative (37) - 10 Items
+            ["무엇 / 뭐", "mu-eot / mweo", "What", 37, "❓"],
+            ["누구", "nu-gu", "Who", 37, "👤"],
+            ["언제", "eon-je", "When", 37, "⏰"],
+            ["어디", "eo-di", "Where", 37, "📍"],
+            ["왜", "wae", "Why", 37, "❓"],
+            ["어떻게", "eo-tteo-ke", "How", 37, "🧩"],
+            ["얼마나 / 얼마", "eol-ma", "How much / How many", 37, "💵"],
+
+            // Page 12: Country & Nationality (38) - 20 Items
+            ["한국", "han-guk", "South Korea", 38, "🇰🇷"],
+            ["미국", "mi-guk", "USA", 38, "🇺🇸"],
+            ["중국", "jung-guk", "China", 38, "🇨🇳"],
+            ["일본", "il-bon", "Japan", 38, "🇯🇵"],
+            ["영국", "yeong-guk", "UK", 38, "🇬🇧"],
+            ["독일", "dok-il", "Germany", 38, "🇩🇪"],
+            ["프랑스", "peu-rang-seu", "France", 38, "🇫🇷"],
+            ["베트남", "be-teu-nam", "Vietnam", 38, "🇻🇳"],
+            ["필리핀", "pil-ri-pin", "Philippines", 38, "🇵🇭"],
+            ["캐나다", "kae-na-da", "Canada", 38, "🇨🇦"],
+            ["호주", "ho-ju", "Australia", 38, "🇦🇺"]
+        ];
+
+        // STATE VARIABLES
+        let currentDataset = [];
+        let filteredList = [];
+        let currentIndex = 0;
+        let isFlipped = false;
+        let activeCategory = "ALL";
+        let searchQuery = "";
+        let starredOnly = false;
+
+        // Local Storage Favorites
+        let starredMap = {};
+        try {
+            starredMap = JSON.parse(localStorage.getItem("clas_korean_starred") || "{}");
+        } catch(e) { starredMap = {}; }
+
+        // Quiz State
+        let quizQuestions = [];
+        let quizCurrentIdx = 0;
+        let quizScore = 0;
+
+        // On Load Init
+        window.onload = function() {
+            // Process raw dataset into objects
+            currentDataset = RAW_VOCAB.map((item, idx) => ({
+                id: idx + 1,
+                hangul: item[0],
+                roman: item[1],
+                english: item[2],
+                catId: item[3],
+                category: CATEGORY_NAMES[item[3]] || "General",
+                icon: item[4]
+            }));
+
+            // Update Header Count
+            document.getElementById("badge-total").innerText = `${currentDataset.length}+ Words`;
+
+            // Populate Category Filter Dropdown
+            populateCategories();
+
+            // Render Initial View
+            applyFilters();
+            renderCard();
+            renderTable();
+            renderCategoryChips();
+
+            // Keyboard Shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (document.getElementById('view-cards').classList.contains('hidden')) return;
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    flipCard();
+                } else if (e.code === 'ArrowRight') {
+                    nextCard();
+                } else if (e.code === 'ArrowLeft') {
+                    prevCard();
+                }
+            });
+        };
+
+        // Populate Category Select Dropdown
+        function populateCategories() {
+            const select = document.getElementById('category-filter');
+            select.innerHTML = `<option value="ALL">All Categories (${currentDataset.length}+ Words)</option>`;
+            
+            Object.keys(CATEGORY_NAMES).forEach(catId => {
+                const count = currentDataset.filter(d => d.catId == catId).length;
+                if (count > 0) {
+                    const opt = document.createElement('option');
+                    opt.value = catId;
+                    opt.innerText = `${CATEGORY_NAMES[catId]} (${count})`;
+                    select.appendChild(opt);
+                }
+            });
+        }
+
+        // Render Quick Chips
+        function renderCategoryChips() {
+            const container = document.getElementById('category-chips');
+            container.innerHTML = '';
+
+            const allBtn = document.createElement('button');
+            allBtn.className = `px-3 py-1 rounded-full whitespace-nowrap text-xs font-semibold border transition-all ${activeCategory === 'ALL' ? 'bg-amber-500 text-black border-amber-500' : 'bg-gray-900 text-gray-400 border-gray-800 hover:border-gray-700'}`;
+            allBtn.innerText = 'All Words';
+            allBtn.onclick = () => { selectCategoryChip('ALL'); };
+            container.appendChild(allBtn);
+
+            const topCategories = [1, 15, 17, 16, 29, 38]; // Top major categories
+            topCategories.forEach(catId => {
+                const name = CATEGORY_NAMES[catId];
+                const btn = document.createElement('button');
+                btn.className = `px-3 py-1 rounded-full whitespace-nowrap text-xs font-semibold border transition-all ${activeCategory == catId ? 'bg-amber-500 text-black border-amber-500' : 'bg-gray-900 text-gray-400 border-gray-800 hover:border-gray-700'}`;
+                btn.innerText = name;
+                btn.onclick = () => { selectCategoryChip(catId); };
+                container.appendChild(btn);
+            });
+        }
+
+        function selectCategoryChip(catId) {
+            activeCategory = catId.toString();
+            document.getElementById('category-filter').value = activeCategory;
+            applyFilters();
+            renderCategoryChips();
+        }
+
+        // Filter & Search Logic
+        function applyFilters() {
+            filteredList = currentDataset.filter(item => {
+                // Category Filter
+                if (activeCategory !== "ALL" && item.catId != activeCategory) return false;
+                
+                // Starred Filter
+                if (starredOnly && !starredMap[item.id]) return false;
+
+                // Search Query Filter
+                if (searchQuery.trim() !== "") {
+                    const q = searchQuery.toLowerCase();
+                    const matchH = item.hangul.toLowerCase().includes(q);
+                    const matchR = item.roman.toLowerCase().includes(q);
+                    const matchE = item.english.toLowerCase().includes(q);
+                    if (!matchH && !matchR && !matchE) return false;
+                }
+
+                return true;
+            });
+
+            currentIndex = 0;
+            renderCard();
+            renderTable();
+        }
+
+        function onCategoryChange() {
+            activeCategory = document.getElementById('category-filter').value;
+            applyFilters();
+            renderCategoryChips();
+        }
+
+        function onSearchInput() {
+            searchQuery = document.getElementById('search-input').value;
+            applyFilters();
+        }
+
+        function toggleStarredFilter() {
+            starredOnly = !starredOnly;
+            const btn = document.getElementById('btn-starred-filter');
+            const starIcon = document.getElementById('star-icon');
+            if (starredOnly) {
+                btn.classList.add('bg-amber-500/20', 'border-amber-500', 'text-amber-400');
+                starIcon.classList.add('text-amber-400', 'fill-amber-400');
+            } else {
+                btn.classList.remove('bg-amber-500/20', 'border-amber-500', 'text-amber-400');
+                starIcon.classList.remove('text-amber-400', 'fill-amber-400');
+            }
+            applyFilters();
+        }
+
+        function shuffleCurrentList() {
+            for (let i = filteredList.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [filteredList[i], filteredList[j]] = [filteredList[j], filteredList[i]];
+            }
+            currentIndex = 0;
+            renderCard();
+            renderTable();
+        }
+
+        // RENDER 3D FLASHCARD
+        function renderCard() {
+            if (filteredList.length === 0) {
+                document.getElementById('card-counter').innerText = '0 of 0';
+                document.getElementById('front-hangul').innerText = 'No Words Found';
+                document.getElementById('front-roman').innerText = 'Try clearing your search/filter';
+                document.getElementById('back-english').innerText = 'No Match';
+                document.getElementById('front-icon').innerText = '🔍';
+                document.getElementById('back-icon').innerText = '🔍';
+                return;
+            }
+
+            const item = filteredList[currentIndex];
+            const isStarred = !!starredMap[item.id];
+
+            // Counter & Badges
+            document.getElementById('card-counter').innerText = `Word ${currentIndex + 1} of ${filteredList.length}`;
+            document.getElementById('card-category-badge').innerText = item.category;
+
+            // Card Front
+            document.getElementById('front-category').innerText = item.category.toUpperCase();
+            document.getElementById('front-icon').innerText = item.icon || '📍';
+            document.getElementById('front-hangul').innerText = item.hangul;
+            document.getElementById('front-roman').innerText = item.roman;
+
+            // Card Back
+            document.getElementById('back-category').innerText = item.category.toUpperCase();
+            document.getElementById('back-icon').innerText = item.icon || '📍';
+            document.getElementById('back-english').innerText = item.english;
+            document.getElementById('back-hangul-sub').innerHTML = `${item.hangul} <span class="text-xs text-amber-400 font-mono">(${item.roman})</span>`;
+
+            // Star Buttons
+            const starBtns = [document.getElementById('front-star-btn'), document.getElementById('btn-card-star')];
+            starBtns.forEach(btn => {
+                if (btn) {
+                    if (isStarred) {
+                        btn.innerHTML = `<svg class="w-5 h-5 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
+                    } else {
+                        btn.innerHTML = `<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>`;
+                    }
+                }
+            });
+
+            // Ensure card front is facing user when changed
+            if (isFlipped) {
+                isFlipped = false;
+                document.getElementById('flashcard-inner').classList.remove('rotate-y-180');
+            }
+        }
+
+        function flipCard() {
+            isFlipped = !isFlipped;
+            const cardInner = document.getElementById('flashcard-inner');
+            if (isFlipped) {
+                cardInner.classList.add('rotate-y-180');
+            } else {
+                cardInner.classList.remove('rotate-y-180');
+            }
+        }
+
+        function nextCard() {
+            if (filteredList.length === 0) return;
+            currentIndex = (currentIndex + 1) % filteredList.length;
+            renderCard();
+        }
+
+        function prevCard() {
+            if (filteredList.length === 0) return;
+            currentIndex = (currentIndex - 1 + filteredList.length) % filteredList.length;
+            renderCard();
+        }
+
+        function toggleStarCurrent() {
+            if (filteredList.length === 0) return;
+            const item = filteredList[currentIndex];
+            if (starredMap[item.id]) {
+                delete starredMap[item.id];
+            } else {
+                starredMap[item.id] = true;
+            }
+            try {
+                localStorage.setItem("clas_korean_starred", JSON.stringify(starredMap));
+            } catch(e) {}
+            renderCard();
+            renderTable();
+        }
+
+        // RENDER MASTER TABLE LIST VIEW
+        function renderTable() {
+            const tbody = document.getElementById('vocab-table-body');
+            document.getElementById('list-count-label').innerText = `Showing ${filteredList.length} Vocabulary Items`;
+            tbody.innerHTML = '';
+
+            if (filteredList.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-gray-500">No matching words found.</td></tr>`;
+                return;
+            }
+
+            filteredList.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-gray-800/40 transition-colors";
+                
+                const isStarred = !!starredMap[item.id];
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 text-center text-gray-500 text-xs font-mono">${index + 1}</td>
+                    <td class="py-3 px-4 font-bold text-white font-hangul text-base flex items-center gap-2">
+                        <span>${item.icon}</span> ${item.hangul}
+                    </td>
+                    <td class="py-3 px-4 text-amber-400/90 font-mono text-xs">${item.roman}</td>
+                    <td class="py-3 px-4 text-gray-200 font-medium">${item.english}</td>
+                    <td class="py-3 px-4 text-xs">
+                        <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-400 border border-gray-700">${item.category}</span>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button onclick="playTTS('${item.hangul}')" class="p-1.5 hover:bg-amber-500 hover:text-black rounded-lg text-gray-400 transition-all" title="Listen">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        </button>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button onclick="toggleStarItem(${item.id})" class="p-1.5 rounded-lg transition-all">
+                            ${isStarred 
+                                ? `<svg class="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`
+                                : `<svg class="w-4 h-4 text-gray-600 hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>`
+                            }
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function toggleStarItem(id) {
+            if (starredMap[id]) {
+                delete starredMap[id];
+            } else {
+                starredMap[id] = true;
+            }
+            try {
+                localStorage.setItem("clas_korean_starred", JSON.stringify(starredMap));
+            } catch(e) {}
+            renderCard();
+            renderTable();
+        }
+
+        // TTS SPEECH SYNTHESIS
+        function playTTS(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function playAudioCurrent() {
+            if (filteredList.length === 0) return;
+            playTTS(filteredList[currentIndex].hangul);
+        }
+
+        // VIEW MODE SWITCHER
+        function setViewMode(mode) {
+            const btnCards = document.getElementById('tab-cards');
+            const btnList = document.getElementById('tab-list');
+            const btnQuiz = document.getElementById('tab-quiz');
+
+            const viewCards = document.getElementById('view-cards');
+            const viewList = document.getElementById('view-list');
+            const viewQuiz = document.getElementById('view-quiz');
+
+            // Reset active styles
+            [btnCards, btnList, btnQuiz].forEach(b => {
+                b.className = "px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all text-gray-400 hover:text-white";
+            });
+
+            viewCards.classList.add('hidden');
+            viewList.classList.add('hidden');
+            viewQuiz.classList.add('hidden');
+
+            if (mode === 'cards') {
+                btnCards.className = "px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all bg-amber-500 text-black font-semibold shadow";
+                viewCards.classList.remove('hidden');
+            } else if (mode === 'list') {
+                btnList.className = "px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all bg-amber-500 text-black font-semibold shadow";
+                viewList.classList.remove('hidden');
+            } else if (mode === 'quiz') {
+                btnQuiz.className = "px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all bg-amber-500 text-black font-semibold shadow";
+                viewQuiz.classList.remove('hidden');
+                startQuizMode();
+            }
+        }
+
+        // QUIZ MODE ENGINE
+        function startQuizMode() {
+            quizScore = 0;
+            quizCurrentIdx = 0;
+            document.getElementById('quiz-score').innerText = quizScore;
+            
+            // Pick 10 random items from filtered dataset
+            const shuffled = [...filteredList].sort(() => 0.5 - Math.random());
+            quizQuestions = shuffled.slice(0, 10);
+
+            generateQuizQuestion();
+        }
+
+        function generateQuizQuestion() {
+            document.getElementById('btn-quiz-next').classList.add('hidden');
+            if (quizCurrentIdx >= quizQuestions.length || quizQuestions.length === 0) {
+                // Quiz Finish State
+                document.getElementById('quiz-question-word').innerText = "Quiz Completed! 🎉";
+                document.getElementById('quiz-question-roman').innerText = `Final Score: ${quizScore} / ${quizQuestions.length}`;
+                document.getElementById('quiz-icon').innerText = "🏆";
+                document.getElementById('quiz-options-container').innerHTML = `
+                    <button onclick="startQuizMode()" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-xl transition-all shadow">
+                        Restart Quiz
+                    </button>
+                `;
+                return;
+            }
+
+            const current = quizQuestions[quizCurrentIdx];
+            document.getElementById('quiz-question-num').innerText = `Question ${quizCurrentIdx + 1} of ${quizQuestions.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((quizCurrentIdx) / quizQuestions.length) * 100}%`;
+            
+            document.getElementById('quiz-icon').innerText = current.icon || '📍';
+            document.getElementById('quiz-question-word').innerText = current.hangul;
+            document.getElementById('quiz-question-roman').innerText = current.roman;
+
+            // Generate 4 Options (1 correct, 3 wrong)
+            let options = [current.english];
+            const distractorPool = currentDataset.filter(d => d.id !== current.id);
+            while (options.length < 4 && distractorPool.length > 0) {
+                const rand = distractorPool[Math.floor(Math.random() * distractorPool.length)].english;
+                if (!options.includes(rand)) {
+                    options.push(rand);
+                }
+            }
+            // Shuffle Options
+            options.sort(() => 0.5 - Math.random());
+
+            const container = document.getElementById('quiz-options-container');
+            container.innerHTML = '';
+
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700 hover:border-amber-500 text-gray-200 p-3.5 rounded-xl text-sm font-medium transition-all";
+                btn.innerText = opt;
+                btn.onclick = () => handleQuizAnswer(btn, opt === current.english);
+                container.appendChild(btn);
+            });
+        }
+
+        function handleQuizAnswer(selectedBtn, isCorrect) {
+            const container = document.getElementById('quiz-options-container');
+            const buttons = container.querySelectorAll('button');
+
+            // Disable all buttons
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (isCorrect) {
+                selectedBtn.className = "w-full text-left bg-emerald-600 text-white border border-emerald-400 p-3.5 rounded-xl text-sm font-bold shadow-lg";
+                quizScore += 1;
+                document.getElementById('quiz-score').innerText = quizScore;
+            } else {
+                selectedBtn.className = "w-full text-left bg-rose-600 text-white border border-rose-400 p-3.5 rounded-xl text-sm font-bold shadow-lg";
+            }
+
+            quizCurrentIdx++;
+            const nextBtn = document.getElementById('btn-quiz-next');
+            nextBtn.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
